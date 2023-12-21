@@ -1,0 +1,8 @@
+status = True
+
+while status == True:
+    name = input("Name:")
+    if len(name) < 3 or len(name) > 50:
+        print("too short or to long, try again.\n(min 3 characters, max 50 characters). ")
+    else:
+        print("name looks good! ")

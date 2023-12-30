@@ -1,22 +1,25 @@
-on_going = True
 car_status = False
-while on_going:
-    comand = input()
-    if comand == "help":
+while True:
+    command = input().lower()
+    if command == "help":
         print("""start - to start the car
-        stop - to stop the car 
-        quit - to exit
+stop - to stop the car 
+quit - to exit
         """)
-    elif comand == "start":
-        print("Car started...Ready to go!")
-        car_status = True
-    elif comand == "stop":
+    elif command == "start":
+        if not car_status:
+            print("Car started...Ready to go!")
+            car_status = True
+        else:
+            print("Car has already started.LET'S GO!!!")
+
+    elif command == "stop":
         if car_status:
             print("Car stopped.")
             car_status = False
         else:
-            print("Car is already still.")
-    elif comand == "quit":
+            print("Car is already still. What are you doing?")
+    elif command == "quit":
         break
     else:
         print("I don't understand that...")

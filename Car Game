@@ -1,0 +1,22 @@
+on_going = True
+car_status = False
+while on_going:
+    comand = input()
+    if comand == "help":
+        print("""start - to start the car
+        stop - to stop the car 
+        quit - to exit
+        """)
+    elif comand == "start":
+        print("Car started...Ready to go!")
+        car_status = True
+    elif comand == "stop":
+        if car_status:
+            print("Car stopped.")
+            car_status = False
+        else:
+            print("Car is already still.")
+    elif comand == "quit":
+        break
+    else:
+        print("I don't understand that...")
